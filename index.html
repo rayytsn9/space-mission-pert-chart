@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Mission PERT Chart</title>
+    <title>Detailed Space Mission PERT Chart</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +16,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
         .row {
             display: flex;
@@ -23,14 +24,14 @@
             margin: 20px 0;
         }
         .box {
-            padding: 15px 25px;
-            border: 2px solid #0073e6;
+            padding: 15px;
+            border: 2px solid #5a4ba4;
             border-radius: 8px;
-            background-color: #e6f3ff;
+            background-color: #e0dff7;
             text-align: center;
             font-weight: bold;
             position: relative;
-            min-width: 100px;
+            min-width: 150px;
         }
         .critical-path {
             border-color: #e63946;
@@ -39,44 +40,105 @@
         .arrow {
             width: 50px;
             height: 2px;
-            background-color: #0073e6;
+            background-color: #5a4ba4;
             position: relative;
             margin: 0 10px;
+        }
+        .arrow.dotted {
+            background: none;
+            border-top: 2px dotted #e63946;
         }
         .arrow::before {
             content: '';
             width: 0;
             height: 0;
-            border-left: 10px solid #0073e6;
+            border-left: 10px solid #5a4ba4;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
             position: absolute;
             right: -10px;
             top: -4px;
         }
+        .arrow.dotted::before {
+            border-left: 10px solid #e63946;
+        }
+        .time-label {
+            font-size: 12px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .task-details {
+            font-size: 12px;
+            font-weight: normal;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Space Mission PERT Chart</h2>
+
+        <!-- Row 1 -->
         <div class="row">
-            <div class="box critical-path">Prepare Spacecraft<br>(4 weeks)</div>
+            <div class="box critical-path">
+                Start Mission
+                <div class="task-details">Project planning and timeline setup</div>
+                <div class="time-label">(1 week)</div>
+            </div>
+            <div class="arrow dotted"></div>
+            <div class="box critical-path">
+                Prepare Spacecraft
+                <div class="task-details">Inspect and ready spacecraft systems, fuel tanks, and control modules</div>
+                <div class="time-label">(4 weeks)</div>
+            </div>
             <div class="arrow"></div>
-            <div class="box">Train Crew<br>(3 weeks)</div>
+            <div class="box">
+                Train Crew
+                <div class="task-details">Basic training, mission simulation, emergency protocol review</div>
+                <div class="time-label">(3 weeks)</div>
+            </div>
         </div>
+
+        <!-- Row 2 -->
         <div class="row">
-            <div class="box">Gather Supplies<br>(2 weeks)</div>
+            <div class="box">
+                Gather Supplies
+                <div class="task-details">Order food, medical supplies, technical equipment</div>
+                <div class="time-label">(2 weeks)</div>
+            </div>
             <div class="arrow"></div>
-            <div class="box critical-path">Install Equipment<br>(5 weeks)</div>
+            <div class="box critical-path">
+                Install Equipment
+                <div class="task-details">Load essential equipment, secure scientific instruments and tools</div>
+                <div class="time-label">(5 weeks)</div>
+            </div>
         </div>
+
+        <!-- Row 3 -->
         <div class="row">
-            <div class="box">Test Systems<br>(3 weeks)</div>
+            <div class="box">
+                Test Systems
+                <div class="task-details">Perform software checks, run hardware diagnostics, verify communications</div>
+                <div class="time-label">(3 weeks)</div>
+            </div>
             <div class="arrow"></div>
-            <div class="box critical-path">Final Preparations<br>(2 weeks)</div>
+            <div class="box critical-path">
+                Final Preparations
+                <div class="task-details">Run final inspection, crew readiness check, mission briefing</div>
+                <div class="time-label">(2 weeks)</div>
+            </div>
         </div>
+
+        <!-- Row 4 -->
         <div class="row">
-            <div class="box critical-path">Launch Mission<br>(1 week)</div>
+            <div class="box critical-path">
+                Launch Mission
+                <div class="task-details">Crew boarding, initiate countdown, commence launch</div>
+                <div class="time-label">(1 week)</div>
+            </div>
         </div>
+
+        <p style="font-size: 12px; color: #555;"><span style="color: #e63946;">Dotted line</span> indicates the critical path</p>
     </div>
 </body>
 </html>
