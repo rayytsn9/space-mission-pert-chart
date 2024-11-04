@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Mission PERT Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .box {
+            padding: 15px 25px;
+            border: 2px solid #0073e6;
+            border-radius: 8px;
+            background-color: #e6f3ff;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+            min-width: 100px;
+        }
+        .critical-path {
+            border-color: #e63946;
+            background-color: #fddcdc;
+        }
+        .arrow {
+            width: 50px;
+            height: 2px;
+            background-color: #0073e6;
+            position: relative;
+            margin: 0 10px;
+        }
+        .arrow::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 10px solid #0073e6;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            right: -10px;
+            top: -4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Space Mission PERT Chart</h2>
+        <div class="row">
+            <div class="box critical-path">Prepare Spacecraft<br>(4 weeks)</div>
+            <div class="arrow"></div>
+            <div class="box">Train Crew<br>(3 weeks)</div>
+        </div>
+        <div class="row">
+            <div class="box">Gather Supplies<br>(2 weeks)</div>
+            <div class="arrow"></div>
+            <div class="box critical-path">Install Equipment<br>(5 weeks)</div>
+        </div>
+        <div class="row">
+            <div class="box">Test Systems<br>(3 weeks)</div>
+            <div class="arrow"></div>
+            <div class="box critical-path">Final Preparations<br>(2 weeks)</div>
+        </div>
+        <div class="row">
+            <div class="box critical-path">Launch Mission<br>(1 week)</div>
+        </div>
+    </div>
+</body>
+</html>
