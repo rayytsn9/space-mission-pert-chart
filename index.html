@@ -85,11 +85,20 @@
                 <div class="task-details">Project planning and timeline setup</div>
                 <div class="time-label">(1 week)</div>
             </div>
-            <div class="arrow dotted"></div>
+            <div class="arrow"></div>
             <div class="box critical-path">
                 Prepare Spacecraft
                 <div class="task-details">Inspect and ready spacecraft systems, fuel tanks, and control modules</div>
                 <div class="time-label">(4 weeks)</div>
+            </div>
+        </div>
+
+        <!-- Row 2: Parallel tasks -->
+        <div class="row">
+            <div class="box">
+                Gather Supplies
+                <div class="task-details">Order food, medical supplies, technical equipment</div>
+                <div class="time-label">(2 weeks)</div>
             </div>
             <div class="arrow"></div>
             <div class="box">
@@ -99,38 +108,29 @@
             </div>
         </div>
 
-        <!-- Row 2 -->
+        <!-- Row 3: Install Equipment on critical path -->
         <div class="row">
-            <div class="box">
-                Gather Supplies
-                <div class="task-details">Order food, medical supplies, technical equipment</div>
-                <div class="time-label">(2 weeks)</div>
-            </div>
-            <div class="arrow dotted"></div>
             <div class="box critical-path">
                 Install Equipment
                 <div class="task-details">Load essential equipment, secure scientific instruments and tools</div>
                 <div class="time-label">(5 weeks)</div>
             </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="row">
+            <div class="arrow dotted"></div>
             <div class="box">
                 Test Systems
                 <div class="task-details">Perform software checks, run hardware diagnostics, verify communications</div>
                 <div class="time-label">(3 weeks)</div>
             </div>
-            <div class="arrow dotted"></div>
+        </div>
+
+        <!-- Row 4: Final Preparations on critical path -->
+        <div class="row">
             <div class="box critical-path">
                 Final Preparations
                 <div class="task-details">Run final inspection, crew readiness check, mission briefing</div>
                 <div class="time-label">(2 weeks)</div>
             </div>
-        </div>
-
-        <!-- Row 4 -->
-        <div class="row">
+            <div class="arrow dotted"></div>
             <div class="box critical-path">
                 Launch Mission
                 <div class="task-details">Crew boarding, initiate countdown, commence launch</div>
